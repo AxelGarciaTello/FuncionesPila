@@ -46,9 +46,19 @@ int pal(void){
     return 1;
 }
 
+//Ciclo de repetición del programa
+void menu(void){
+     char continuar;
+     do{
+          int basura=pal();
+          printf("Desea ingresar otra palabra [s/n]\n");
+          continuar=getchar();
+     }
+     while(continuar=='s');
+}
+
 //Función main para ejecutar el programa
 int main(void){
-    int basura=pal();
-    system("pause");
+    menu();
     return 0;
 }
