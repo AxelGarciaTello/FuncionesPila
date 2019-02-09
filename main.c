@@ -26,21 +26,22 @@ int pal(void){
     crearPila(&A);
     crearPila(&B);
     crearPila(&Aux);
+    fflush(stdin);
     while((car=getchar())!='\n'){
-                                 insertarPila(&A, car);
-                                 insertarPila(&B, car);
+		insertarPila(&A, car);
+        insertarPila(&B, car);
     }
     while(!pilaVacia(B)){
-                         insertarPila(&Aux, quitarPila(&B));
+        insertarPila(&Aux, quitarPila(&B));
     }
     while(!pilaVacia(A)){
-                         TipoDato a,aux;
-                         a=quitarPila(&A);
-                         aux=quitarPila(&Aux);
-                         if(a!=aux){
-                                    printf("La palabra no es un palindromo\n");
-                                    return 0;
-                         }
+        TipoDato a,aux;
+        a=quitarPila(&A);
+        aux=quitarPila(&Aux);
+        if(a!=aux){
+			printf("La palabra no es un palindromo\n");
+            return 0;
+        }
     }
     printf("La palabra es un palindromo\n");
     return 1;
@@ -50,9 +51,9 @@ int pal(void){
 void menu(void){
      char continuar;
      do{
-          int basura=pal();
-          printf("Desea ingresar otra palabra [s/n]\n");
-          continuar=getchar();
+        int basura=pal();
+        printf("Desea ingresar otra palabra [s/n]\n");
+        continuar=getchar();
      }
      while(continuar=='s');
 }
