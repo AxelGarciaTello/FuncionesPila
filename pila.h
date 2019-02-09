@@ -29,3 +29,5 @@ TipoDato cimaPila(PILA p);
 int pilaLlena(PILA p);
 int pilaVacia(PILA p);
 void eliminarPila(PILA *p);
+void copiarPila(PILA A, PILA *B);
+TipoDato elemento(PILA A, int n);
